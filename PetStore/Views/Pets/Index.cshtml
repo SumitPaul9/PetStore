@@ -1,0 +1,20 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@foreach (var item in Model)
+{
+    <p>Breed: @item</p>
+    @Html.Action("GetPetsByBreed", new { breed = item });
+}
+
+
